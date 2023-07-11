@@ -32,6 +32,11 @@ React: A JavaScript library for building user interfaces.
 MobX State Tree: A state management library based on MobX for creating structured state models.
 MobX React Lite: A lightweight observer utility for React components.
 
+
+## Link to the live website
+https://stamurai-project.vercel.app/
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
