@@ -1,3 +1,36 @@
+## Task Management App
+A simple task management app built using React and MobX State Tree.
+
+## Installation
+npx create-next-app stamurai-project
+cd stamurai-project
+# Install the dependencies:
+npm install 
+# Run the app in development mode
+npm run dev
+
+
+## Usage
+The app displays a list of tasks, including their title, description, and status.
+To add a new task, enter the title, description, and status in the input fields and click the "Add Task" button.
+To edit a task, click the "Edit" button next to the task you want to edit. A prompt will appear to enter the updated title, description, and status.
+To delete a task, click the "Delete" button next to the task you want to delete.
+All tasks are automatically persisted in local storage, so they will be available even after refreshing the page
+
+
+## Features
+Add new tasks with a title, description, and status.
+Edit existing tasks.
+Delete tasks.
+Data Storage for tasks in local storage.
+
+## Dependencies
+The app uses the following dependencies:
+
+React: A JavaScript library for building user interfaces.
+MobX State Tree: A state management library based on MobX for creating structured state models.
+MobX React Lite: A lightweight observer utility for React components.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -7,16 +40,19 @@ First, run the development server:
 ```bash
 npm run dev # for windows
 # or
-yarn dev # for mac os
+yarn dev
 # or
 pnpm dev
 ```
 
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/mypage.tsx`. The page auto-updates as you edit the file.
+# The above link will open a home page which is by default src/app/page.tsx page and there I have given a link for the App. Once you click on the App it will take you 'http://localhost:3000/mypage.tsx' where the actual App will be shown.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+
+This project uses [`node_modules/next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 
