@@ -2,7 +2,7 @@
 A simple task management app built using React and MobX State Tree.
 
 ## Installation
-npx create-next-app stamurai-project
+npx create-next-app stamurai-project .
 cd stamurai-project
 # Install the dependencies:
 npm install 
