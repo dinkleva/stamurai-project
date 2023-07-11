@@ -48,7 +48,7 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# The above link will open a home page which is by default src/app/page.tsx page and there I have given a link for the App. Once you click on the App it will take you 'http://localhost:3000/mypage.tsx' where the actual App will be shown.
+## The above link will open a home page which is by default src/app/page.tsx page and there I have given a link for the App. Once you click on the App it will take you 'http://localhost:3000/mypage.tsx' where the actual App will be shown.
 
 
 
