@@ -3,39 +3,51 @@ import { observer } from 'mobx-react-lite';
 import { types, onSnapshot, applySnapshot } from 'mobx-state-tree';
 import '../styles/tailwind.css';
 
+// Defining the Task type
 type Task = {
   title: string;
   description: string;
   status: string;
 };
 
+// Defining the Task model
 const TaskModel = types.model('Task', {
   title: types.string,
   description: types.string,
   status: types.string,
 });
 
+// Defining the TaskStore model
 const TaskStore = types
   .model('TaskStore', {
     tasks: types.array(TaskModel),
   })
   .actions(self => ({
+    // Action for adding a new task
     addTask(task: Task) {
       self.tasks.push(task);
     },
+    // Action for editing an existing task
     editTask(index: number, updatedTask: Task) {
       self.tasks[index] = updatedTask;
     },
+
+    // Action for deleting a task
     deleteTask(index: number) {
       self.tasks.splice(index, 1);
     },
+
+    // Action for clearing all tasks
     clearTasks() {
       self.tasks.clear();
     },
   }));
 
+
+// Creating an instance of TaskStore
 const taskStore = TaskStore.create({ tasks: [] });
 
+// Main component
 function Home() {
   const [newTask, setNewTask] = useState<Task>({
     title: '',
@@ -49,6 +61,8 @@ function Home() {
     if (storedTasks) {
       applySnapshot(taskStore.tasks, JSON.parse(storedTasks));
     }
+
+    // Applying the stored snapshot to the taskStore
     onSnapshot(taskStore.tasks, snapshot => {
       localStorage.setItem('tasks', JSON.stringify(snapshot));
     });
@@ -60,16 +74,19 @@ function Home() {
       newTask.description.trim() !== '' &&
       newTask.status.trim() !== ''
     ) {
+      // Adding the new task to the taskStore
       taskStore.addTask(newTask);
       setNewTask({ title: '', description: '', status: '' });
     }
   };
 
   const editTask = (index: number, updatedTask: Task) => {
+    // Editing the task at specified index
     taskStore.editTask(index, updatedTask);
   };
 
   const deleteTask = (index: number) => {
+    // Deleting the task at specified index
     taskStore.deleteTask(index);
   };
 
@@ -87,7 +104,7 @@ function Home() {
             <div>
               <h3 className="text-lg font-bold">{task.title}</h3>
               <p>{task.description}</p>
-              <p>Status: {task.status}</p>
+              <p className='font-bold'>Status: <span className='text-white font-normal'>{task.status}</span></p>
             </div>
             <div>
               <button
