@@ -92,7 +92,7 @@ function Home() {
   return (
     <div className="mx-auto my-auto p-4 dark:bg-slate-900 w-full h-screen ring-1 shadow-xl">
       <div className="w-full xl:max-w-3xl mx-auto">
-        <h1 className="xl:text-9xl lg:text-7xl md:text-5xl sm:text-3xl font-bold mb-4 ml-6 text-blue-600">
+        <h1 className="xl:text-9xl lg:text-7xl md:text-5xl sm:text-3xl font-bold mb-8 ml-6 text-blue-600">
           Task Management
         </h1>
 
@@ -101,13 +101,13 @@ function Home() {
           {taskStore.tasks.map((task: Task, index: number) => (
             <li
               key={index}
-              className="xl:w-full lg:w-96 dark:bg-slate-700 rounded shadow p-4 ml-6 mb-2 items-center justify-between"
+              className="xl:w-full lg:w-96 dark:bg-blue-900 rounded-xl shadow p-4 ml-6 mb-2 items-center justify-between"
             >
               <div>
-                <h3 className="text-4xl font-bold">{task.title}</h3>
-                <p className="text-3xl">{task.description}</p>
-                <p className="text-4xl font-bold mb-6">
-                  Status: <span className="text-yellow-600 font-normal">{task.status}</span>
+                <h3 className="text-4xl font-bold dark:text-slate-900">{task.title}</h3>
+                <p className="text-3xl dark:text-slate-900">{task.description}</p>
+                <p className="text-4xl font-bold dark:text-slate-900 mb-6">
+                  Status: <span className="text-yellow-300 font-normal">{task.status}</span>
                 </p>
               </div>
               <div>
