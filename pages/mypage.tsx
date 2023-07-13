@@ -93,7 +93,7 @@ function Home() {
     <div className="mx-auto my-auto p-4 dark:bg-slate-900 w-full min-h-screen ring-1 shadow-xl overflow-y-auto">
       <div className="flex flex-col items-center md:w-full xl:max-w-3xl mx-auto">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-7xl font-bold mb-2 text-blue-600">
-          Task Management
+          Manage Your Tasks
         </h1>
 
         {/* Task List */}
@@ -107,7 +107,7 @@ function Home() {
                 <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold dark:text-slate-900">
                   {task.title}
                 </h3>
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl dark:text-slate-900">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl dark:text-white">
                   {task.description}
                 </p>
                 <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold dark:text-slate-900 mb-4">
