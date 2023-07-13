@@ -90,9 +90,9 @@ function Home() {
   };
 
   return (
-    <div className="mx-auto my-auto p-4 dark:bg-slate-900 w-full h-screen ring-1 shadow-xl overflow-y-auto">
-      <div className="w-full xl:max-w-3xl mx-auto">
-        <h1 className="xl:text-9xl lg:text-7xl md:text-5xl sm:text-3xl font-bold mb-8 ml-6 text-blue-600">
+    <div className="mx-auto my-auto p-4 dark:bg-slate-900 w-full min-h-screen ring-1 shadow-xl overflow-y-auto">
+      <div className="flex flex-col items-center md:w-full xl:max-w-3xl mx-auto">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-9xl font-bold mb-2 text-blue-600">
           Task Management
         </h1>
 
@@ -101,33 +101,46 @@ function Home() {
           {taskStore.tasks.map((task: Task, index: number) => (
             <li
               key={index}
-              className="xl:w-full lg:w-96 dark:bg-blue-900 rounded-xl shadow p-4 ml-6 mb-2 items-center justify-between"
+              className="dark:bg-blue-900 rounded-xl shadow p-4 mb-2 w-64 sm:w-64 md:w-72 lg:w-96 xl:w-full"
             >
               <div>
-                <h3 className="text-4xl font-bold dark:text-slate-900">{task.title}</h3>
-                <p className="text-3xl dark:text-slate-900">{task.description}</p>
-                <p className="text-4xl font-bold dark:text-slate-900 mb-6">
-                  Status: <span className="text-yellow-300 font-normal">{task.status}</span>
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold dark:text-slate-900">
+                  {task.title}
+                </h3>
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl dark:text-slate-900">
+                  {task.description}
+                </p>
+                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold dark:text-slate-900 mb-4">
+                  Status:{" "}
+                  <span className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-yellow-300 font-normal">
+                    {task.status}
+                  </span>
                 </p>
               </div>
-              <div>
+              <div className="flex items-center justify-end">
                 <button
-                  className="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded mr-2"
+                  className="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded mr-2 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl"
                   onClick={() => deleteTask(index)}
                 >
                   Delete
                 </button>
                 <button
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-2 py-1 rounded"
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-2 py-1 rounded text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl"
                   onClick={() =>
                     editTask(
                       index,
                       Object.assign({}, task, {
-                        title: prompt('Enter the updated title:', task.title) || task.title,
+                        title:
+                          prompt("Enter the updated title:", task.title) ||
+                          task.title,
                         description:
-                          prompt('Enter the updated description:', task.description) ||
-                          task.description,
-                        status: prompt('Enter the updated status:', task.status) || task.status,
+                          prompt(
+                            "Enter the updated description:",
+                            task.description
+                          ) || task.description,
+                        status:
+                          prompt("Enter the updated status:", task.status) ||
+                          task.status,
                       })
                     )
                   }
@@ -140,35 +153,36 @@ function Home() {
         </ul>
 
         {/* Add Task Form */}
-        <div className="ml-6 flex-none">
-          <input
-            type="text"
-            placeholder="Title"
-            value={newTask.title}
-            onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
-            className="mr-2 mb-2 px-4 py-2 border rounded"
-          />
-          <input
-            type="text"
-            placeholder="Description"
-            value={newTask.description}
-            onChange={(e) => setNewTask({ ...newTask, description: e.target.value })}
-            className="mr-2 mb-2 px-4 py-2 border rounded"
-          />
-          <input
-            type="text"
-            placeholder="Status"
-            value={newTask.status}
-            onChange={(e) => setNewTask({ ...newTask, status: e.target.value })}
-            className="mr-2 mb-2 px-4 py-2 border rounded"
-          />
-          <button
-            onClick={addTask}
-            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded"
-          >
-            Add Task
-          </button>
-        </div>
+        <div className="flex flex-col items-center mt-2 sm:mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-3xl">
+  <input
+    type="text"
+    placeholder="Title"
+    value={newTask.title}
+    onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
+    className="mb-2 px-4 py-2 border rounded w-full text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl"
+  />
+  <input
+    type="text"
+    placeholder="Description"
+    value={newTask.description}
+    onChange={(e) => setNewTask({ ...newTask, description: e.target.value })}
+    className="mb-2 px-4 py-2 border rounded w-full text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl"
+  />
+  <input
+    type="text"
+    placeholder="Status"
+    value={newTask.status}
+    onChange={(e) => setNewTask({ ...newTask, status: e.target.value })}
+    className="mb-2 px-4 py-2 border rounded w-full text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl"
+  />
+  <button
+    onClick={addTask}
+    className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl"
+  >
+    Add Task
+  </button>
+</div>
+
       </div>
     </div>
   );
