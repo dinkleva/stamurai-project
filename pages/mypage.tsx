@@ -92,7 +92,7 @@ function Home() {
   return (
     <div className="mx-auto my-auto p-4 dark:bg-slate-900 w-full min-h-screen ring-1 shadow-xl overflow-y-auto">
       <div className="flex flex-col items-center md:w-full xl:max-w-3xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-9xl font-bold mb-2 text-blue-600">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-7xl font-bold mb-2 text-blue-600">
           Task Management
         </h1>
 
