@@ -90,7 +90,7 @@ function Home() {
   };
 
   return (
-    <div className="mx-auto my-auto p-4 dark:bg-slate-900 w-full h-screen ring-1 shadow-xl">
+    <div className="mx-auto my-auto p-4 dark:bg-slate-900 w-full h-screen ring-1 shadow-xl overflow-y-auto">
       <div className="w-full xl:max-w-3xl mx-auto">
         <h1 className="xl:text-9xl lg:text-7xl md:text-5xl sm:text-3xl font-bold mb-8 ml-6 text-blue-600">
           Task Management
